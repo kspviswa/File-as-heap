@@ -1,4 +1,4 @@
-cacheHeapMap
+File-as-heap
 ============
 
 File backed Heap object store, primarily targetted for Caching applications. 
