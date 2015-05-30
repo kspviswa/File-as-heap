@@ -1,0 +1,102 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>File-as-heap</title>
+  <meta name="description" content="File backed Heap object store, primarily targetted for Caching applications. ">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">File-as-heap</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">File backed Heap object store, primarily targetted for Caching applications. </p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/kspviswa/File-as-heap/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/kspviswa/File-as-heap/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/kspviswa/File-as-heap" class="code">View File-as-heap on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="file-as-heap" class="anchor" href="#file-as-heap" aria-hidden="true"><span class="octicon octicon-link"></span></a>File-as-heap</h1>
+
+<p>File backed Heap object store, primarily targetted for Caching applications. </p>
+
+<h2>
+<a id="issues-in-traditional-memory-approaches" class="anchor" href="#issues-in-traditional-memory-approaches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues in traditional memory approaches</h2>
+
+<ul>
+<li>Fragmentation occurs due to un-even memory requirements.</li>
+<li>Caches are always symmetric in nature and every cache object are of same shape and size. Hence memory fragmentation can be minimized in this.</li>
+<li>Famous memory allocators like libumem, hoard etc do not provide, file backing.</li>
+<li>Caches are meant to restore the state, hence maintaining off-line history is an important requirement.</li>
+<li>Even in case of file backing, deleted / timed-out sessions are not really deleted from the file.</li>
+<li>Hence over the perid of time, file size grow to enormous extent and we are forced to go for new file.</li>
+</ul>
+
+<h2>
+<a id="features-of-file-as-heap" class="anchor" href="#features-of-file-as-heap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features of File-as-heap</h2>
+
+<ul>
+<li>File backed heap. Restoration from the heap binary file is possible during init stage.</li>
+<li>Every object will be of same size. The total size of the file will be automatically word aligned.</li>
+<li>MMAP policy is used. Hence the File I/O bottleneck does not happen. This improves performance.</li>
+<li>The custom heap is aligned in buckets. Hence every bucket can be re-used, re-cycled. The file size of the heap file never increases. Still the recycle is achieved.</li>
+<li>Easy integration possible. The allocate / deallocate / walkHeap provides shares only the pointers. Hence the meta-data involving in this product is merely pointers. nothing else.</li>
+</ul>
+
+<h2>
+<a id="features-planned-for-future-versions" class="anchor" href="#features-planned-for-future-versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features planned for future versions</h2>
+
+<ul>
+<li>HTTP based statistics reporting.</li>
+<li>Shared library based packaging.</li>
+<li>COM object. Reusable.</li>
+</ul>
+
+<p>'''</p>
+
+<h1>
+<a id="kspviswa-wwwkspviswawordpresscom" class="anchor" href="#kspviswa-wwwkspviswawordpresscom" aria-hidden="true"><span class="octicon octicon-link"></span></a>kspviswa [<a href="http://www.kspviswa.wordpress.com">www.kspviswa.wordpress.com</a>]</h1>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/kspviswa" class="avatar"><img src="https://avatars0.githubusercontent.com/u/7476271?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/kspviswa">kspviswa</a> maintains <a href="https://github.com/kspviswa/File-as-heap">File-as-heap</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/kspviswa/File-as-heap/tarball/master" class="tar">tar</a><a href="https://github.com/kspviswa/File-as-heap/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
