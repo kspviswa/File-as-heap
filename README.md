@@ -28,5 +28,4 @@ Features planned for future versions
 * COM object. Reusable.
 
 '''
-kspviswa [www.kspviswa.wordpress.com]
 ======================================
